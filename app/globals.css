@@ -1,0 +1,25 @@
+:root{--bg:#F2F3F7;--surface:#fff;--ink:#17192C;--muted:#5C6077;--line:#E0E2EB;--night:#1B1F3B;--sun:#F2B33D;
+  --ok:#1C8A52;--ok-bg:#E3F4EA;--wait:#9A6510;--wait-bg:#FCF1DC;--alert:#B3361F;--alert-bg:#FBE6E1;--muted-bg:#ECEDF2;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1020;--surface:#171A2D;--ink:#ECEDF6;--muted:#A2A6BE;--line:#2A2E48;
+  --ok:#5FD39A;--ok-bg:#16352A;--wait:#F2C26B;--wait-bg:#3A2D12;--alert:#FF8A72;--alert-bg:#3D1C16;--muted-bg:#23263B;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.top{background:var(--night);color:#fff;padding:18px 20px}
+.top h1{margin:0;font-size:20px}.top p{margin:2px 0 0;color:#C9CCE4;font-size:13px}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 16px 40px}
+.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.fig{padding:14px 16px;border-right:1px solid var(--line)}.fig:last-child{border-right:0}
+.fig b{display:block;font-size:24px}.fig span{color:var(--muted);font-size:13px}
+.money b{color:var(--ok)}
+h2{font-size:16px;margin:26px 0 10px}
+.table{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:14px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--muted);font-weight:500;font-size:13px}tr:last-child td{border-bottom:0}
+.pill{padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600}
+.paid{background:var(--ok-bg);color:var(--ok)}.pending{background:var(--wait-bg);color:var(--wait)}.cancelled,.expired{background:var(--muted-bg);color:var(--muted)}
+.alert{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;background:var(--alert-bg);color:var(--alert);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.alert button{border:1px solid currentColor;background:transparent;color:inherit;border-radius:8px;padding:5px 10px;cursor:pointer;font:inherit;font-size:13px}
+.empty{color:var(--muted);padding:14px}
+.center{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px}
+@media (max-width:720px){.figures{grid-template-columns:repeat(2,minmax(0,1fr))}.fig:nth-child(2){border-right:0}.fig:nth-child(-n+2){border-bottom:1px solid var(--line)}}
